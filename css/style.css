@@ -360,6 +360,8 @@ ol {
 .site-logo {
   font-size: 24px;
   padding-top: 20px;
+  width: 200px;
+  height: 80px;
 }
 
 .main-menu ul {
@@ -437,6 +439,10 @@ ol {
   margin-bottom: 30px;
 }
 
+.portfolio-item:hover {
+  cursor: zoom-in;
+}
+
 .portfolio-item .pi-inner {
   position: absolute;
   width: 100%;
@@ -461,6 +467,7 @@ ol {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  text-transform: capitalize;
 }
 
 .portfolio-item:hover .pi-inner {
