@@ -86,23 +86,24 @@
 			<form class="contact-form">
 				<div class="row">
 					<div class="col-md-6">
-						<input type="text" placeholder="Name">
+						<input type="text" placeholder="Name" id="name" required>
+						<span class="error"></span>
 					</div>
 					<div class="col-md-6">
-						<input type="text" placeholder="E-mail">
+						<input type="text" placeholder="E-mail" id="email">
 					</div>
 					<div class="col-md-6">
-						<input type="text" placeholder="Subject">
+						<input type="text" placeholder="Subject" id="subject">
 					</div>
 					<div class="col-md-6">
-						<input type="text" placeholder="How did you hear about us?">
+						<input type="text" placeholder="How did you hear about us?" id="msg1">
 					</div>
 					<div class="col-md-12">
-						<textarea placeholder="Message"></textarea>
+						<textarea placeholder="Message" id="msg2"></textarea>
 					</div>
 				</div>
 				<div class="text-center">
-					<button class="site-btn">Send</button>
+					<button class="btn site-btn" type="submit">Send</button>
 				</div>
 			</form>
 		</div>
@@ -127,6 +128,32 @@
 		</div>
 	</footer>
 	<!-- footer section end -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="contactModalLabel">Contact Info</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<p>Hi <span class="name"></span>, please contact me by any of the following source. Thanks!</p>
+					<p>Email: <b>neeharikav1@gmail.com</b></p> 
+					<p>Phone: <b>9963956227</b></p>
+					<ul class="list-inline contact-social">
+						<li><a target="_blank" href="https://m.youtube.com/channel/UC0ovPOYE3iXHKVDVYP5OnlA"><span class="fa fa-youtube"></span> Youtube</a></li>
+						<li><a target="_blank" href="https://www.instagram.com/vs_neeharika/?hl=en"><span class="fa fa-instagram"></span> Instagram</a></li>
+						<li><a target="_blank" href="https://m.facebook.com/neehash3/"><span class="fa fa-facebook"></span> Facebook</a></li>
+						<li><a target="_blank" href="https://mobile.twitter.com/saranyasarru"><span class="fa fa-twitter"></span> Twitter</a></li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" onClick="reload()">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<!--====== Javascripts & Jquery ======-->

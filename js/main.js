@@ -24,6 +24,32 @@ $(window).on('load', function() {
 
 });
 
+$(document).ready(function(){
+	$('.site-btn').on('click', function(e){
+		e.preventDefault();
+		let name = $('#name').val();
+		let email = $('#email').val();
+		let subject = $('#subject').val();
+		let msg1 = $('#msg1').val();
+		let msg2 = $('#msg2').val();
+
+		if(!name || name === '') {
+			$('.error').text('Please fill the name field');
+			return;
+		} else {
+			$('.error').text('');
+			$('.name').text(name);
+			$('#contactModal').modal('show');
+		}
+
+	});
+
+});
+
+function reload() {
+	location.reload();
+}
+
 
 (function($) {
 
