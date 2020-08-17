@@ -25,7 +25,7 @@ $(window).on('load', function() {
 });
 
 $(document).ready(function(){
-	$('.site-btn').on('click', function(e){
+	$('.submit-contact').on('click', function(e){
 		e.preventDefault();
 		let name = $('#name').val();
 		let email = $('#email').val();
