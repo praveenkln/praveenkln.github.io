@@ -9,10 +9,12 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
   color: #444444;
 }
 
 .tSec {
+  font-family: 'Roboto', sans-serif;
   color: #54c1f0 !important;
 }
 
