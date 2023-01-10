@@ -1459,6 +1459,10 @@ section {
 /*--------------------------------------------------------------
 # Frequently Asked Questions
 --------------------------------------------------------------*/
+.careers .item {
+  margin-bottom: 60px;
+}
+
 .faq {
   padding: 60px 0;
 }
@@ -1490,7 +1494,7 @@ section {
   font-size: 16px;
   position: absolute;
   left: 0;
-  top: -2px;
+  top: 2px;
 }
 
 .faq .faq-list p {
