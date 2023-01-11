@@ -1463,6 +1463,10 @@ section {
   margin-bottom: 60px;
 }
 
+.services-container>div, .solutions-container>div {
+  margin-bottom: 30px;
+}
+
 .faq {
   padding: 60px 0;
 }
