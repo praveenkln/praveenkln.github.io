@@ -136,6 +136,7 @@ h6 {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
+  display: none !important;
   background: #233266;
   height: 40px;
   font-size: 14px;
