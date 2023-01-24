@@ -6,21 +6,28 @@
   */
 
   // Replace contact@example.com with your real receiving email address
-  $to = "kleelanagapraveen@gmail.com";
-  $subject = "My subject";
-  $txt = "Hello world!";
-  $headers = "From: webmaster@example.com" . "\r\n" .
-  "CC: somebodyelse@example.com";
+  // $to = "hr@solveitservicesinc.com";
 
-  mail($to,$subject,$txt,$headers);
+  $to = "kleelanagapraveen@gmail.com";
+  $subject = $_POST['subject'];
+  $txt = $_POST['name']."\n\n".$_POST['message'];
+  $headers = "From: ".$_POST['email'];
+
+  $mailSent = mail($to,$subject,$txt,$headers);
 
 
   $receiving_email_address = 'contact@example.com';
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
+  // if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
+  //   include( $php_email_form );
+  // } else {
+  //   die( 'Unable to load the "PHP Email Form" Library!');
+  // }
+
+  if($mailSent) {
+    echo "OK";
   } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+    die('Failed sending email!');
   }
 
   $contact = new PHP_Email_Form;
