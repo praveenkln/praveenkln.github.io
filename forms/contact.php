@@ -6,6 +6,15 @@
   */
 
   // Replace contact@example.com with your real receiving email address
+  $to = "kleelanagapraveen@gmail.com";
+  $subject = "My subject";
+  $txt = "Hello world!";
+  $headers = "From: webmaster@example.com" . "\r\n" .
+  "CC: somebodyelse@example.com";
+
+  mail($to,$subject,$txt,$headers);
+
+
   $receiving_email_address = 'contact@example.com';
 
   if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
