@@ -6,10 +6,9 @@
   */
 
   // Replace contact@example.com with your real receiving email address
-  // $to = "hr@solveitservicesinc.com";
+  $to = "hr@solveitservicesinc.com";
 
-  $to = "kleelanagapraveen@gmail.com";
-  $subject = $_POST['subject'];
+  $subject = "SolveIT Contact Form - ".$_POST['subject'];
   $txt = $_POST['name']."\n\n".$_POST['message'];
   $headers = "From: ".$_POST['email'];
 
