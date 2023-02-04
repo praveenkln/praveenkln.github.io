@@ -292,8 +292,8 @@ h6 {
   height: 2px;
   bottom: -6px;
   left: 0; */
-  background-color: #54c1f0;
-  color: #233266;
+  background-color: #233266;
+  color: #54c1f0;
   /* visibility: hidden; */
   /* width: 0px; */
   transition: all 0.3s ease-in-out 0s;
@@ -302,15 +302,15 @@ h6 {
 .navbar a:hover,
 .navbar li:hover>a,
 .navbar .active {
-  background-color: #54c1f0;
-  color: #233266 !important;
+  background-color: #233266;
+  color: #54c1f0 !important;
 }
 
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #54c1f0;
+  color: #233266;
 }
 
 .navbar .dropdown ul {
