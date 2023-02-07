@@ -1,0 +1,15 @@
+[04-Feb-2023 21:50:18 UTC] PHP Warning:  require(./Exception.php): failed to open stream: No such file or directory in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 7
+[04-Feb-2023 21:50:18 UTC] PHP Fatal error:  require(): Failed opening required './Exception.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 7
+[04-Feb-2023 21:51:46 UTC] PHP Warning:  require(./Exception.php): failed to open stream: No such file or directory in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 7
+[04-Feb-2023 21:51:46 UTC] PHP Fatal error:  require(): Failed opening required './Exception.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 7
+[04-Feb-2023 21:55:28 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 12
+[04-Feb-2023 21:55:28 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 12
+[04-Feb-2023 21:56:27 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/rffymwjn1mt3/public_html/forms/mailMe.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 16
+[04-Feb-2023 22:00:45 UTC] PHP Warning:  require(/home/rffymwjn1mt3/public_html/forms/mailMe.php/Exception.php): failed to open stream: No such file or directory in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 7
+[04-Feb-2023 22:00:45 UTC] PHP Fatal error:  require(): Failed opening required '/home/rffymwjn1mt3/public_html/forms/mailMe.php/Exception.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 7
+[04-Feb-2023 22:02:05 UTC] PHP Parse error:  syntax error, unexpected ''/Exception.php'' (T_CONSTANT_ENCAPSED_STRING) in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 7
+[04-Feb-2023 22:03:35 UTC] PHP Warning:  require(/home/rffymwjn1mt3/public_html/forms/Exception.php): failed to open stream: No such file or directory in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 7
+[04-Feb-2023 22:03:35 UTC] PHP Fatal error:  require(): Failed opening required '/home/rffymwjn1mt3/public_html/forms/Exception.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/rffymwjn1mt3/public_html/forms/mailMe.php on line 7

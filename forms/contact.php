@@ -6,7 +6,7 @@
   */
 
   // Replace contact@example.com with your real receiving email address
-  $to = "hr@solveitservicesinc.com";
+  $to = "rffymwjn1mt3";
 
   $subject = "SolveIT Contact Form - ".$_POST['subject'];
   $txt = $_POST['name']."\n\n".$_POST['message'];
@@ -14,6 +14,7 @@
   $headers = array(
     'From' => $_POST['email'],
     'Reply-To' => $_POST['email'],
+    'Cc' => 'hr@solveitservicesinc.com',
     'X-Mailer' => 'PHP/' . phpversion()
 );
 
