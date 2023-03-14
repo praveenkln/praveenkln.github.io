@@ -1,61 +1,57 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  */
-
-  // Replace contact@example.com with your real receiving email address
-  $to = "rffymwjn1mt3";
-
-  $subject = "SolveIT Contact Form - ".$_POST['subject'];
-  $txt = $_POST['name']."\n\n".$_POST['message'];
-  // $headers = "From: ".$_POST['email'];
-  $headers = array(
-    'From' => $_POST['email'],
-    'Reply-To' => $_POST['email'],
-    'Cc' => 'hr@solveitservicesinc.com',
-    'X-Mailer' => 'PHP/' . phpversion()
-);
-
-  $mailSent = mail($to,$subject,$txt,$headers);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 
-  // $receiving_email_address = 'contact@example.com';
+require (dirname(__FILE__).'/Exception.php');
+require (dirname(__FILE__).'/PHPMailer.php');
+require (dirname(__FILE__).'/SMTP.php');
 
-  // if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-  //   include( $php_email_form );
-  // } else {
-  //   die( 'Unable to load the "PHP Email Form" Library!');
-  // }
+//Load Composer's autoloader
+// require 'vendor/autoload.php';
 
-  if($mailSent) {
-    echo "OK";
-  } else {
-    die('Failed sending email!');
-  }
 
-  // $contact = new PHP_Email_Form;
-  // $contact->ajax = true;
-  
-  // $contact->to = $receiving_email_address;
-  // $contact->from_name = $_POST['name'];
-  // $contact->from_email = $_POST['email'];
-  // $contact->subject = $_POST['subject'];
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+$mail = new PHPMailer(true);
+$mail->ajax = true;
 
-  // $contact->add_message( $_POST['name'], 'From');
-  // $contact->add_message( $_POST['email'], 'Email');
-  // $contact->add_message( $_POST['message'], 'Message', 10);
+try {
+    //Server settings
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.office365.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'solveitservicesinc@outlook.com';                     //SMTP username
+    $mail->Password   = 'Solveit*1';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-  // echo $contact->send();
+    //Recipients
+    $mail->setFrom('solveitservicesinc@outlook.com', 'Contact Form');
+    $mail->addAddress('hr@solveitservicesinc.com', '');     //Add a recipient
+    // $mail->addAddress('ellen@example.com');               //Name is optional
+    // $mail->addReplyTo('info@example.com', 'Information');
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
+
+    //Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+    //Content
+    $mail->isHTML(false);                                  //Set email format to HTML
+    $mail->Subject = "SolveIT Contact Form - ".$_POST['subject'];
+    $mail->Body    = $_POST['email']."\r\n\r\n".$_POST['name']."\r\n".$_POST['message'];
+
+    if($mail->send()) {
+        echo 'OK';
+    } else {
+        echo 'Email could not be sent.';
+    }
+} catch (Exception $e) {
+    // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "Message could not be sent.";
+}
+
 ?>
